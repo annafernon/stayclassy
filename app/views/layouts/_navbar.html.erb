@@ -15,7 +15,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/activities/">Starting Soon<span class="sr-only">(current)</span></a></li>
-        <li><a href="/activities/new">Add Activity</a></li>
+        <% if user_signed_in? %>
+          <% if current_user.doctor_profile %>
+            <li><a href="/activities/new">Add Activity</a></li>
+          <% end %>
+        <% end %>  
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">You <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -39,11 +43,12 @@
             <li><a href="#">Calender</a></li>
             <li><a href="#">Your Profile</a></li>
             <li role="separator" class="divider"></li>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-            </ul>
-            </li>
+            <% if user_signed_in? %>
+              <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li><%= link_to 'Sign in', new_user_session_path %></li>
+            <% end %>
+          </ul>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
