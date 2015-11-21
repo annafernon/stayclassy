@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Upcominging Activities</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Activity type</th>
+      <th>Description</th>
+      <th>Doctor</th>
+      <th>Date</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Location</th>
+      <th>Available Spots</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.activity_type %></td>
+        <td><%= activity.description %></td>
+        <td><%= activity.doctor_profile.name if activity.doctor_profile %></td>
+        <td><%= activity.date.strftime('%d %b %Y') %></td>
+        <td><%= activity.start_time.strftime('%H:%M') %></td>
+        <td><%= activity.end_time.strftime('%H:%M') %></td>
+        <td><%= activity.location %></td>
+        <td><%= activity.spots %></td>
+        <td><%= link_to 'Show', activity %></td>
+        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add New Activity', new_activity_path %>

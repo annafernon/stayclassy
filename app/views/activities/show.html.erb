@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Doctor:</strong>
+  <%= @doctor_profile.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @activity.description %>
+</p>
+
+<p>
+  <strong>Activity type:</strong>
+  <%= @activity.activity_type %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @activity.location %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @activity.date.strftime('%d %b %Y') %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @activity.start_time.strftime('%H:%M') %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @activity.end_time.strftime('%H:%M') %>
+</p>
+
+<p>
+  <strong>Available Spots:</strong>
+  <%= @activity.spots %>
+</p>
+
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>

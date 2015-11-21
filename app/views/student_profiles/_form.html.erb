@@ -1,0 +1,13 @@
+<%= simple_form_for(@student_profile) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :year, collection: 1..6 %>
+    <%= f.input :clinical_school, collection: ['Wagga Wagga', 'Albury', 'Port Macquarie', 'Coffs Harbour', 'POW', 'St Vincents', 'St George', 'Sutherland', 'SWS'] %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

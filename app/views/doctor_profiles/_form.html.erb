@@ -1,0 +1,15 @@
+<%= simple_form_for(@doctor_profile) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :role %>
+    <%= f.input :specialty %>
+    <%= f.input :hospital %>
+    <%= f.input :photo %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

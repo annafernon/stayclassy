@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student_profile.name %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @student_profile.year %>
+</p>
+
+<p>
+  <strong>Clinical school:</strong>
+  <%= @student_profile.clinical_school %>
+</p>
+
+<%= link_to 'Edit', edit_student_profile_path(@student_profile) %> |
+<%= link_to 'Find other students', student_profiles_path %> |
+<%= link_to 'Find activities at your clinical school', activities_path %>

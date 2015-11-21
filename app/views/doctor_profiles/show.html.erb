@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @doctor_profile.name %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @doctor_profile.role %>
+</p>
+
+<p>
+  <strong>Specialty:</strong>
+  <%= @doctor_profile.specialty %>
+</p>
+
+<p>
+  <strong>Hospital:</strong>
+  <%= @doctor_profile.hospital %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @doctor_profile.photo %>
+</p>
+
+<%= link_to 'Add an activity', new_activity_path(doctor: @doctor_profile.id), class: 'btn btn-default' %>
+<br><br>
+<%= link_to 'Edit', edit_doctor_profile_path(@doctor_profile) %> |
+<%= link_to 'See Doctor Profiles', doctor_profiles_path %>

@@ -1,0 +1,20 @@
+<%= simple_form_for(@activity) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  
+    <%= f.input :doctor_profile_id, as: :hidden, input_html: { value: current_user.doctor_profile.id } %>
+
+    <%= f.input :description %>
+    <%= f.input :activity_type, collection: ['Clinic', 'Ward round', 'Surgery', 'Beside tutorial', 'Classroom tutorial', 'other'] %>
+    <%= f.input :location %>
+    <%= f.input :date %>
+    <%= f.input :start_time %>
+    <%= f.input :end_time %>
+    <%= f.input :spots %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
