@@ -22,7 +22,9 @@
       <tr>
         <td><%= activity.activity_type %></td>
         <td><%= activity.description %></td>
-        <td><%= activity.doctor_profile.name if activity.doctor_profile %></td>
+        <% if activity.doctor_profile %>
+          <td><%= link_to activity.doctor_profile.name, doctor_profile_path(doctor_profile) %></td>
+        <% end %>
         <td><%= activity.date.strftime('%d %b %Y') %></td>
         <td><%= activity.start_time.strftime('%H:%M') %></td>
         <td><%= activity.end_time.strftime('%H:%M') %></td>
